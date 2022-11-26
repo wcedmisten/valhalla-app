@@ -1,7 +1,7 @@
 {
   "env": {
     "browser": true,
-    "node": true
+    "es2021": true
   },
   "settings": {
     "react": {
@@ -13,12 +13,10 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "overrides": [],
   "parserOptions": {
-    "ecmaVersion": 9,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
+  "plugins": ["react"],
   "rules": {
     "standard/computed-property-even-spacing": 0,
     "semi": 0,
