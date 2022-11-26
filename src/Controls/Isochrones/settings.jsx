@@ -20,4 +20,5 @@ export const Settings = ({ handleRemoveIsos }) => {
 
 Settings.propTypes = {
   handleRemoveIsos: PropTypes.func,
+  handleSettings: PropTypes.func,
 }

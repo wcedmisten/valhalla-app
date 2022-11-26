@@ -32,5 +32,6 @@ export const Settings = ({ handleAddWaypoint, handleRemoveWaypoints }) => (
 Settings.propTypes = {
   handleAddWaypoint: PropTypes.func,
   handleRemoveWaypoints: PropTypes.func,
+  handleSettings: PropTypes.func,
   group: PropTypes.string,
 }
