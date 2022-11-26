@@ -49,10 +49,10 @@ const convertDDToDMS = (decimalDegrees) =>
     0 | decimalDegrees,
     '° ',
     0 |
-      (((decimalDegrees =
-        (decimalDegrees < 0 ? -decimalDegrees : decimalDegrees) + 1e-4) %
-        1) *
-        60),
+    (((decimalDegrees =
+      (decimalDegrees < 0 ? -decimalDegrees : decimalDegrees) + 1e-4) %
+      1) *
+      60),
     "' ",
     0 | (((decimalDegrees * 60) % 1) * 60),
     '"',
@@ -271,6 +271,7 @@ class Map extends React.Component {
       highlightStyle: {
         color: 'blue',
       },
+      width: window.innerWidth * 0.9,
     })
     this.hg.addTo(this.map)
     const hg = this.hg
@@ -983,9 +984,9 @@ class Map extends React.Component {
         <div>
           {this.state.showPopup && leafletPopupDiv
             ? ReactDOM.createPortal(
-                MapPopup(this.state.showInfoPopup),
-                leafletPopupDiv
-              )
+              MapPopup(this.state.showInfoPopup),
+              leafletPopupDiv
+            )
             : null}
         </div>
       </React.Fragment>

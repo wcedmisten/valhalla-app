@@ -7,12 +7,17 @@ import {
   SHOW_SETTINGS,
   ZOOM_TO,
   RESET_SETTINGS,
+  TOGGLE_DIRECTIONS,
 } from 'actions/types'
-import { settingsInit } from 'Controls/settings-options'
+import {
+  settingsInit,
+  settingsInitTruckOverride,
+} from 'Controls/settings-options'
 
 const initialState = {
   activeTab: 0,
-  showSettings: true,
+  showSettings: false,
+  showDirectionsPanel: true,
   coordinates: [],
   loading: false,
   message: {
@@ -55,6 +60,13 @@ export const common = (state = initialState, action) => {
       }
     }
 
+    case TOGGLE_DIRECTIONS: {
+      return {
+        ...state,
+        showDirectionsPanel: !state.showDirectionsPanel,
+      }
+    }
+
     case UPDATE_SETTINGS: {
       const { name, value } = action.payload
       return {
@@ -70,7 +82,9 @@ export const common = (state = initialState, action) => {
       return {
         ...state,
         settings: {
-          ...settingsInit,
+          ...(state.profile === 'truck'
+            ? settingsInitTruckOverride
+            : settingsInit),
         },
       }
     }
