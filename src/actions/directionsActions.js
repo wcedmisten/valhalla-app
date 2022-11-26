@@ -84,13 +84,11 @@ const fetchValhallaDirections = (valhallaRequest) => (dispatch) => {
   axios
     .get(VALHALLA_OSM_URL + '/route', config)
     .then(({ data }) => {
-      console.log(data)
       data.decodedGeometry = parseDirectionsGeometry(data)
       dispatch(registerRouteResponse(VALHALLA_OSM_URL, data))
       dispatch(zoomTo(data.decodedGeometry))
     })
     .catch((response) => {
-      console.log(response)
       let error_msg = response.data.error
       if (response.data.error_code === 154) {
         error_msg += ` for ${valhallaRequest.json.costing}.`
