@@ -69,7 +69,7 @@ const excludePolygonsLayer = L.featureGroup()
 
 // a leaflet map consumes parameters, I'd say they are quite self-explanatory
 const mapParams = {
-  center: [52.51831, 13.393707],
+  center: [38.0293, -78.4767],
   zoomControl: false,
   zoom: 10,
   maxZoom: 18,
