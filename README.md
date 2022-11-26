@@ -6,7 +6,7 @@ This is the ReactJS demo web app running on https://valhalla.openstreetmap.de. I
 
 ## Commands
 
-### `npm install`
+### `npm install --legacy-peer-deps`
 
 Install the dependencies.
 
