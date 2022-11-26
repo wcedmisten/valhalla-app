@@ -67,9 +67,11 @@ const highlightRouteSegmentlayer = L.featureGroup()
 const highlightRouteIndexLayer = L.featureGroup()
 const excludePolygonsLayer = L.featureGroup()
 
+const centerCoords = process.env.REACT_APP_CENTER_COORDS.split(',')
+
 // a leaflet map consumes parameters, I'd say they are quite self-explanatory
 const mapParams = {
-  center: [38.0293, -78.4767],
+  center: [parseFloat(centerCoords[0]), parseFloat(centerCoords[1])],
   zoomControl: false,
   zoom: 10,
   maxZoom: 18,
