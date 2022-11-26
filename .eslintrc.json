@@ -16,7 +16,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
   "rules": {
     "standard/computed-property-even-spacing": 0,
     "semi": 0,
